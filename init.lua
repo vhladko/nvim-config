@@ -481,5 +481,16 @@ cmp.setup {
   },
 }
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+vim.filetype.add({
+    extension = {
+        templ = "templ",
+    },
+})
+
+-- Ukrainian layout: keep Normal-mode keys working as if layout were English
+-- р о л д  → h j k l       (movement)
+-- ц у и    → w e b         (word motions)
+-- ф ш щ    → a i o         (insert commands)
+-- ч з г н  → x p u y       (edit / paste / undo / search-repeat)
+-- в с т    → d c n         (change / delete / next match)
+vim.opt.langmap = [[ролдцуифшщчзгнвст;hjklwebaioxpuydcn,РОЛДЦУИФШЩЧЗГНВСТ;HJKLWEBAIOXPUYDCN]]
