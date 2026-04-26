@@ -8,9 +8,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- templ filetype
+-- custom filetypes
 vim.filetype.add({
   extension = {
     templ = "templ",
+    gotmpl = "gotmpl",
   },
 })
+
